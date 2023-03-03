@@ -29,7 +29,7 @@
 import Foundation
 import PromiseKit
 
-/// long-
+// on-demand version
 //public let GlobalUserSessionRepository: UserSessionRepository = {
 //#if USER_SESSION_DATASTORE_FILEBASED
 //  let userSessionDataStore = FileUserSessionDataStore()
