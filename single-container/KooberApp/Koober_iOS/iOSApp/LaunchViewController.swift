@@ -36,7 +36,9 @@ public class LaunchViewController: NiblessViewController {
   // MARK: - Properties
   let viewModel: LaunchViewModel
   private var subscriptions = Set<AnyCancellable>()
-
+  public init(viewModel: LaunchViewModel) {
+    self.viewModel = viewModel
+  }
   // MARK: - Methods
   init(launchViewModelFactory: LaunchViewModelFactory) {
     self.viewModel = launchViewModelFactory.makeLaunchViewModel()

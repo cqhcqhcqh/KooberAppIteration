@@ -43,6 +43,11 @@ public class SignUpViewController: NiblessViewController {
     super.init()
   }
 
+  init(viewModel: SignUpViewModel) {
+    self.viewModel = viewModel
+    super.init()
+  }
+  
   public override func loadView() {
     view = SignUpRootView(viewModel: viewModel)
   }

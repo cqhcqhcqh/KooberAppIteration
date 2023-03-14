@@ -78,6 +78,8 @@
 		28BD4F3D20531DBF007C7245 /* KooberUserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD4F3C20531DBF007C7245 /* KooberUserSessionRepository.swift */; };
 		28BD4F4B205444BC007C7245 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD4F4A205444BC007C7245 /* Secret.swift */; };
 		28BD4F4F20544ECC007C7245 /* ErrorMessagePresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD4F4E20544ECC007C7245 /* ErrorMessagePresentation.swift */; };
+		634BF6C429B1C95900D39DBF /* KooberObjectFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BF6C329B1C95900D39DBF /* KooberObjectFactories.swift */; };
+		6373537229C0149700422AFD /* KooberAppDenpdencySingleContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6373537129C0149700422AFD /* KooberAppDenpdencySingleContainer.swift */; };
 		9F128670205F661B00384B2C /* RideOptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12866F205F661B00384B2C /* RideOptionRepository.swift */; };
 		9F149F3F1FB898AE0016EA3C /* InBundleImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F149F3E1FB898AE0016EA3C /* InBundleImageCache.swift */; };
 		9F149F411FB9ED800016EA3C /* FakeNewRideRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F149F401FB9ED800016EA3C /* FakeNewRideRemoteAPI.swift */; };
@@ -276,6 +278,8 @@
 		28BD4F522054745C007C7245 /* GettingUsersLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingUsersLocationViewModel.swift; sourceTree = "<group>"; };
 		28BD4F54205552E7007C7245 /* PickMeUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickMeUpViewModel.swift; sourceTree = "<group>"; };
 		28BD4F56205559DE007C7245 /* PickMeUpMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickMeUpMapViewModel.swift; sourceTree = "<group>"; };
+		634BF6C329B1C95900D39DBF /* KooberObjectFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KooberObjectFactories.swift; sourceTree = "<group>"; };
+		6373537129C0149700422AFD /* KooberAppDenpdencySingleContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KooberAppDenpdencySingleContainer.swift; sourceTree = "<group>"; };
 		9F12866D205F651E00384B2C /* RideOptionPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideOptionPickerViewModel.swift; sourceTree = "<group>"; };
 		9F12866F205F661B00384B2C /* RideOptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideOptionRepository.swift; sourceTree = "<group>"; };
 		9F149F3E1FB898AE0016EA3C /* InBundleImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InBundleImageCache.swift; sourceTree = "<group>"; };
@@ -450,7 +454,9 @@
 		28B10C1C20BDEEBF00122AF2 /* iOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				634BF6C329B1C95900D39DBF /* KooberObjectFactories.swift */,
 				9F47B1231FAD6CBF009B5587 /* KooberAppDepedencyContainer.swift */,
+				6373537129C0149700422AFD /* KooberAppDenpdencySingleContainer.swift */,
 				9F47B1541FAD6CC0009B5587 /* MainViewController.swift */,
 				9F47B1531FAD6CC0009B5587 /* LaunchViewController.swift */,
 				9F47B1521FAD6CC0009B5587 /* LaunchRootView.swift */,
@@ -1359,6 +1365,7 @@
 				28B10C3420BDF09500122AF2 /* WelcomeRootView.swift in Sources */,
 				28B10C3E20BDF0B100122AF2 /* ProfileContentViewController.swift in Sources */,
 				28B10C2220BDEF2400122AF2 /* KooberOnboardingDependencyContainer.swift in Sources */,
+				6373537229C0149700422AFD /* KooberAppDenpdencySingleContainer.swift in Sources */,
 				28B10C4C20BDF0C900122AF2 /* RideOptionSegmentedControl.swift in Sources */,
 				28B10C3020BDF00B00122AF2 /* PickMeUpRootView.swift in Sources */,
 				28B10C3F20BDF0B100122AF2 /* ProfileContentRootView.swift in Sources */,
@@ -1373,6 +1380,7 @@
 				28B10C4620BDF0BF00122AF2 /* MapAnnotation+MapKit.swift in Sources */,
 				28B10C2A20BDEFB600122AF2 /* MainViewController.swift in Sources */,
 				28B10C4920BDF0C500122AF2 /* DropoffLocationPickerContentViewController.swift in Sources */,
+				634BF6C429B1C95900D39DBF /* KooberObjectFactories.swift in Sources */,
 				28B10C2420BDEF3400122AF2 /* KooberSignedInDependencyContainer.swift in Sources */,
 				28B10C4B20BDF0C900122AF2 /* RideOptionPickerViewController.swift in Sources */,
 				28B10C4D20BDF0CE00122AF2 /* RideOptionButton.swift in Sources */,

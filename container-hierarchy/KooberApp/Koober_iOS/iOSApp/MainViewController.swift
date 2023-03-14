@@ -47,9 +47,28 @@ public class MainViewController: NiblessViewController {
   var subscriptions = Set<AnyCancellable>()
 
   // Factories
+  // MainViewController doesn't have to know anything about the dependency graph
+  // needed to create a new OnboardingViewController by injecting factories
   let makeOnboardingViewController: () -> OnboardingViewController
   let makeSignedInViewController: (UserSession) -> SignedInViewController
+  
+  public init(viewModel: MainViewModel, launchViewController: LaunchViewController) {
+    self.viewModel = viewModel
+    self.launchViewController = launchViewController
+    super.init()
+  }
 
+  // inject factories(factory closure) in to an object-under-construction(MainViewController)
+  
+  public init(viewModel: MainViewModel,
+              launchViewController: LaunchViewController,
+              onboardingViewControllerFactory: @escaping () -> OnboardingViewController) {
+    self.viewModel = viewModel
+    self.launchViewController = launchViewController
+    self.makeOnboardingViewController = onboardingViewControllerFactory
+    super.init()
+  }
+  
   // MARK: - Methods
   public init(viewModel: MainViewModel,
               launchViewController: LaunchViewController,
@@ -96,6 +115,24 @@ public class MainViewController: NiblessViewController {
   }
 
   public func presentOnboarding() {
+//    on-demand version
+//    let onboardingViewModel = OnboardingViewModel()
+//
+//    let welcomeViewModel = WelcomeViewModel(goToSignUpNavigator: onboardingViewModel,
+//                                            goToSignInNavigator: onboardingViewModel)
+//    let welcomeViewController = WelcomeViewController(viewModel: welcomeViewModel)
+//
+//    let signInViewModel = SignInViewModel(userSessionRepository: GlobalUserSessionRepository,
+//                                          signedInResponder: viewModel) // let viewModel: MainViewModel
+//    let signViewController = SignInViewController(viewModel: signInViewModel)
+//
+//    let signUpViewModel = SignUpViewModel(userSessionRepository: GlobalUserSessionRepository,
+//                                          signedInResponder: viewModel) // let viewModel: MainViewModel
+//    let signUpViewController = SignUpViewController(viewModel: signUpViewModel)
+//
+//    let onboardingViewController = OnboardingViewController(viewModel: onboardingViewModel,
+//                                                            welcomeViewController: welcomeViewController, signInViewController: signViewController, signUpViewController: signUpViewController)
+    
     let onboardingViewController = makeOnboardingViewController()
     onboardingViewController.modalPresentationStyle = .fullScreen
     present(onboardingViewController, animated: true) { [weak self] in

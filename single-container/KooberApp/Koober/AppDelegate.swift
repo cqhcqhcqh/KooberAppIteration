@@ -34,15 +34,35 @@ import PromiseKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  let injectionContainer = KooberAppDependencyContainer()
   var window: UIWindow?
-
+  let appContainer = KooberAppDenpencySingleContainer()
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
-    let mainVC = injectionContainer.makeMainViewController()
+//   on-demand version
+//    let mainViewModel = MainViewModel()
+//
+//    let launchViewModel = LaunchViewModel(userSessionRepository: GlobalUserSessionRepository,
+//                                          notSignedInResponder: mainViewModel,
+//                                          signedInResponder: mainViewModel)
+//
+//    let launchViewController = LaunchViewController(viewModel: launchViewModel)
+//
+//    let mainViewController = MainViewController(viewModel: mainViewModel,
+//                                                launchViewController: launchViewController)
 
+    // fatories-version
+//    let sharedMainViewModel = GlobalMainViewModel
+//    let sharedUserSessionRepository = GlobalUserSessionRepository
+//
+//    let objectFactories = KooberObjectFactories()
+//    let mainViewController = objectFactories.makeMainViewController(viewModel: sharedMainViewModel,
+//                                                                    userSessionRepository: sharedUserSessionRepository)
+    
+    // note: should only create one instance of a container becase
+    // containers are statefule unlike a fatories class.
+    let mainViewController = appContainer.makeMainViewController()
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.makeKeyAndVisible()
-    window?.rootViewController = mainVC
+    window?.rootViewController = mainViewController
 
     return true
   }

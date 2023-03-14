@@ -47,6 +47,11 @@ public class SignInViewController : NiblessViewController {
     super.init()
   }
 
+  public init(viewModel: SignInViewModel) {
+    self.viewModel = viewModel
+    super.init()
+  }
+  
   public override func loadView() {
     self.view = SignInRootView(viewModel: viewModel)
   }

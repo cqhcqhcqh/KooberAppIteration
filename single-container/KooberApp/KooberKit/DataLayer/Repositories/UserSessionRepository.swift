@@ -29,6 +29,20 @@
 import Foundation
 import PromiseKit
 
+// on-demand version
+//public let GlobalUserSessionRepository: UserSessionRepository = {
+//#if USER_SESSION_DATASTORE_FILEBASED
+//  let userSessionDataStore = FileUserSessionDataStore()
+//#else
+//  let userSessionCoder = UserSessionPropertyListCoder()
+//  let userSessionDataStore = KeychainUserSessionDataStore(userSessionCoder: userSessionCoder)
+//#endif
+//
+//  let authRemoteAPI = FakeAuthRemoteAPI()
+//  return KooberUserSessionRepository(dataStore: userSessionDataStore, remoteAPI: authRemoteAPI)
+//}()
+
+
 public protocol UserSessionRepository {
   
   func readUserSession() -> Promise<UserSession?>

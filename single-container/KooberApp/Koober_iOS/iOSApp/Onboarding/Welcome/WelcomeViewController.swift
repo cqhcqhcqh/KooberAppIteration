@@ -40,6 +40,12 @@ public class WelcomeViewController: NiblessViewController {
     self.welcomeViewModelFactory = welcomeViewModelFactory
     super.init()
   }
+  
+  let viewModel: WelcomeViewModel
+  public init(viewModel: WelcomeViewModel) {
+    self.viewModel = viewModel
+    super.init()
+  }
 
   public override func loadView() {
     let viewModel = welcomeViewModelFactory.makeWelcomeViewModel()
