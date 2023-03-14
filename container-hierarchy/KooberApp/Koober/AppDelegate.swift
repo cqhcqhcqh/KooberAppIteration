@@ -35,7 +35,10 @@ import PromiseKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
-  let appContainer = KooberAppDenpencySingleContainer()
+//  single-container version
+//  let appContainer = KooberAppDenpencySingleContainer()
+  
+  let appContainer = KooberAppDependencyHierarchyContainer()
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
 //   on-demand version
 //    let mainViewModel = MainViewModel()
